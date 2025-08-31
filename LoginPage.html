@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoginPage</title>
+    <style>
+  body {
+    margin: 0;
+    height: 100vh; /* full height of screen */
+    display:flex;
+    justify-content: center; /* horizontally center */
+    align-items: center;     /* vertically center */
+    background:radial-gradient(circle at top left, #ff6b6b, #ff8e53);
+  }
+
+  form {
+    padding: 6%;
+    border: 1px solid #b8b8b8;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.33);
+    font-size: larger;
+  }
+
+  input[type="button"]{
+     background-color: #ffd000;
+     padding: 4%;
+     border: 1px solid rgb(255, 128, 0);
+     border-radius: 2px;
+    }
+
+  input[type="button"]:hover{
+    background-color: #ff9500;
+
+  }
+  
+
+  input[type="submit"]{
+     background-color: #ebebeb;
+     padding: 3%;
+     border: 1px solid rgb(0, 0, 0);
+     border-radius: 2px;
+    }
+
+  input[type="submit"]:hover{
+    background-color: #42d200;
+  }
+
+
+  input[type="reset"]{
+     background-color: #ebebeb;
+     padding: 3%;
+     border: 1px solid rgb(0, 0, 0);
+     border-radius: 2px;
+  }
+
+  input[type="reset"]:hover{
+    background-color: #d2d2d2;
+  }
+</style>
+</head>
+<body>
+
+    <form action="/action_page.php">
+    <h2>PingShop> Login:&nbsp;&nbsp;</h2>
+    <label for="ue">User Email ID:<span title="required to be filled" style="color: red;">*</span></label>
+    <br>
+    <input type="email" id="ue" name="ue" placeholder="Email" required>
+    <br><br>
+
+    <hr style="display: inline-block; width: 38%; vertical-align: middle;"> &nbsp;Or&nbsp; <hr style="display: inline-block; width: 38%; vertical-align: middle;">
+    <br><br>
+
+    <label for="pn">Phone Number:</label>
+    <br>
+
+    <input type="tel" name="pn" placeholder="Phone Number"
+    maxlength="10"
+    minlength="10">
+    <br><br>
+
+    <label for="pw">Password:</label>
+    <br>
+    <input type="password" id="pw" name="pw" value=""
+    minlength="8">
+    <br><br>
+
+    <input type="reset" id="re" name="re" value="Reset">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <input type="submit" id="sm" name="sm" value="Submit">
+    <br><br>
+    Don't have an account? &nbsp;&nbsp;&nbsp;
+    <br><br>
+    <a href="SignupPage.html"><input type="button" id="sm" name="sm" value="Sign Up"></a>
+    <br>    
+ </form> 
+</body>
+</html>

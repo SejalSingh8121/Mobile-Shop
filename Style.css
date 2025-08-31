@@ -1,0 +1,229 @@
+    /*for whole page*/
+    * { 
+        box-sizing: border-box; 
+        margin: 0;
+        padding: 0;
+    }
+
+    /*for body*/
+    body { 
+        margin: 0; font-family: Arial, sans-serif; 
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        background: linear-gradient(135deg, #ffe283 0%, #d4a9ff 100%);
+        min-height: 100vh;
+        padding: 0px 0px;
+    }
+
+    /*for header*/
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgb(15, 15, 44);
+      padding: 20px 16px;
+      gap: 16px;
+    }
+
+    /* left=logo s*/
+    .logo-wrapper { 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .notification-badge {
+      background: linear-gradient(145deg, #ff6b6b, #ff8e53);
+      color: #fff;
+      padding: 8px 25px;
+      border-radius: 25px;
+      font-size: 24px;
+      font-weight: bold;
+      position: relative;
+      box-shadow: 0 6px 30px rgba(255, 107, 107, 0.3);
+      animation: notification-pop 5s ease-in-out infinite;
+    }
+    .notification-dot {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      width: 20px;
+      height: 20px;
+      background: #00ff00;
+      border-radius: 50%;
+      border: 2px solid #004900;
+      animation: blink 2s infinite;
+    }
+    .notification-dot2 {
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      width: 10px;
+      height: 10px;
+      background: #beffbe;
+      border-radius: 50%;
+      border: 3px solid rgb(122, 255, 128);
+      animation: blink 2s infinite;
+    }
+    @keyframes notification-pop {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    } /* logo e*/
+
+.home-btn {
+  display: inline-block;
+  background-color: rgb(15, 15, 44);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.home-btn:hover {
+  background: linear-gradient(rgb(0, 61, 147), #69a7ff);
+}
+
+/* Responsive: make it bigger on small screens */
+    /* Center = Search s*/
+    .search-container {
+      flex: 1;
+      max-width: 600px;
+    }
+    input[type="search"] {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 15px;
+      border: 1px solid rgb(0, 255, 8);
+      background-color: hsl(0, 0%, 100%);
+      color: #000000;
+      font-size: 16px;
+    }
+    input[type="search"]:hover {
+      background-color: #e9e9e9;
+    } /* Search e*/
+
+    /* Right side = Profile s*/
+    .profile-img {
+      width: 48px;
+      height: auto;
+      border-radius: 50%;
+      cursor: pointer;
+    } /* Profile e*/
+
+    /* for responsive header */
+@media (max-width: 600px) {
+  header {
+    flex-wrap: wrap;         /* ✅ allows wrapping */
+  }
+
+  .search-container {
+    flex: 1 1 100%;          /* ✅ goes full width on its own row */
+    order: 3;                /* put it after logo/home/profile */
+    margin-top: 10px;
+  }
+
+  .profile-img {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+ /* header e*/
+
+    /* menu bar s*/
+    .menu{
+        background:linear-gradient(145deg,   rgb(54, 0, 81), #667eea);
+        color: #f8f9fa;
+        display: grid; 
+
+        margin-bottom: 0px;
+        border: 1px solid rgb(15, 15, 44);
+          grid-template-columns: 150px repeat(auto-fit, minmax(120px, 1fr));
+    }
+    .menu div{
+        padding:10px;        
+        border-left: 1px solid rgb(15, 15, 44);
+        border-collapse: collapse;
+        text-align: center;     
+    }
+    /* for responsive menu */
+
+    @media (max-width: 600px) {
+        .menu {
+            grid-template-columns: 1fr; /* stack vertically */
+        }
+        .menu div {
+            text-align: left;
+            border-left: none;
+            border-top: 1px solid rgb(15, 15, 44); /* horizontal dividers instead */
+            
+        }
+        .menu div:first-child {
+            border-top: none; /* avoid double border */
+        }
+    }/* menu e*/
+
+    /*footer s*/
+    footer{
+        background: linear-gradient(145deg, hsl(261, 100%, 7%), rgb(0, 0, 44));
+        color: rgb(215, 215, 215);
+        padding: 10%;
+    }
+    table{
+        margin: 0 auto;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td{
+        padding: 1%;
+        text-align: center;
+    }/*footer e*/
+    /* Menu Link s */
+    .a {
+        color: rgb(255, 255, 255);        /* default color */
+        text-decoration: none;  /* remove underline if you want */
+    }
+
+    /* When mouse hovers */
+    .a:hover {
+        color: rgb(255, 187, 0);         /* color on hover */
+        text-decoration: underline; /* optional */
+    }
+
+    /* When link is clicked (active) */
+    .a:active {
+        color: rgb(162, 0, 73);
+    }
+
+    /* After visiting the link */
+    .a:visited {
+        color: rgb(255, 177, 255);
+    }/* Menu Link e */
+
+    /* Phone s */
+    .b {
+        color: rgb(0, 0, 0);        /* default color */
+        text-decoration: none;  /* remove underline if you want */
+    }
+
+    /* When mouse hovers */
+    .b:hover {
+        color: rgb(255, 128, 0);         /* color on hover */
+        text-decoration: underline; /* optional */
+    }
+
+    /* When link is clicked (active) */
+    .b:active {
+        color: rgb(162, 0, 73);
+    }
+
+    /* After visiting the link */
+    .b:visited {
+        color: rgb(42, 0, 42);
+    }/* Phone e */
+
+
