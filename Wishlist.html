@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist</title>
+    <link rel="stylesheet" href="style.css">
+  <style>
+    /* ✅ BODY as flex container */
+    body {
+      margin: 0;
+      min-height: 100vh;         /* take full viewport height */
+      display: flex;
+      flex-direction: column;    /* stack header → main → footer */
+      background: radial-gradient(circle at top left, #ff6b6b, #ff8e53);
+    }
+
+    /* ✅ HEADER */
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 15px;
+    }
+
+    .logo-wrapper {
+      flex: 0 0 auto;
+      font-weight: bold;
+      color: white;
+      font-size: 20px;
+    }
+
+    .search-container {
+      flex: 1 1 auto;
+      text-align: center;
+    }
+
+    header .search-container form {
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+      border-radius: 10px;
+    }
+
+    header .search-container input[type="search"] {
+      border: 2px solid green;
+      outline: none;
+      padding: 6px 70px;
+      background: transparent;
+      border-radius: 10px;
+    }
+
+    /* ✅ NAV LINKS */
+.nav-links {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: flex-end; /* ✅ pushes Home link to right */
+  gap: 20px;
+  margin-top: 0; /* no extra margin */
+}
+
+    .nav-links a {
+      text-decoration: none;
+      color: hsl(182, 100%, 94%);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .profile-img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    /* ✅ MAIN pushes footer down */
+    main {
+      flex: 1;  /* takes all available free space */
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 20px;
+    }
+
+    /* ✅ FORM */
+    form {
+      padding: 3%;
+      border: 1px solid #b8b8b8;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.33);
+      font-size: larger;
+      margin: 2% auto;
+      width: 30%;
+      min-width: 300px;
+    }
+
+    /* ✅ FOOTER always at bottom */
+    footer {
+      color: white;
+      text-align: center;
+      padding: 15px 10px;
+      margin-top: auto; /* pushes footer to bottom */
+    }
+
+
+    /* ✅ RESPONSIVE */
+    @media (max-width: 900px) {
+      form {
+        width: 60%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header .search-container input[type="search"] {
+        padding: 6px 8px;
+      }
+
+      .profile-img {
+        width: 36px;
+        height: 36px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      form {
+        width: 90%;
+      }
+    }
+    .p{
+        text-align: center; 
+        border: 1px outset #ff6b6b;
+        padding: 20px;
+        border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+      <header>
+    <!-- Left = Logo -->
+    <div class="logo-wrapper">
+      <div class="notification-badge">
+        PingShop
+        <div class="notification-dot"></div>
+        <div class="notification-dot2"></div>
+      </div>
+    </div>
+    <!-- Center = Search -->
+    <div class="search-container">
+      <form action="/action_page.php">
+        <input type="search" id="ue" name="ue" placeholder="🔍 Search...">
+      </form>
+    </div>
+    <!-- Home -->
+    <div>
+        <a href="Index.html" style="text-decoration:none; color:hsl(182, 100%, 94%);"><p style="font-size: 100%; text-align: center;">𖠿 <br>Home</p></a>
+    </div>
+    <!-- Cart -->
+    <div>
+        <a href="Cart.html" style="text-decoration:none; color:hsl(182, 100%, 94%);"><p style="font-size: 100%; text-align: center;">🛒<br>Cart</p></a>
+    </div>
+    <!-- Wishlist -->
+    <div>
+        <a href="" style="text-decoration:none; color:hsl(182, 100%, 94%);"><p style="font-size: 100%; text-align: center;">♥️<br>Wishlist</p></a>
+    </div>
+    <!-- Order -->
+    <div>
+        <a href="Order.html" style="text-decoration:none; color:hsl(182, 100%, 94%);"><p style="font-size: 100%; text-align: center;">🛍️<br>Orders</p></a>
+    </div>
+    <!-- Right = Profile -->
+    <div class="profile">
+      <a href="LoginPage.html"><img src="img/pfp.png" alt="PfP" class="profile-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <form>
+    <p class="p">Add Something to Wishlist First! <br> (´•︵•`)</p>
+    </form>
+  </main>
+
+  <footer>
+    <div style="text-align: center;"><br><br>
+    © 2025 PingShop | All Rights Reserved 
+    <br> @sejalsingh8121@gmail.com</div>
+</footer>
+</body>
+</html>
