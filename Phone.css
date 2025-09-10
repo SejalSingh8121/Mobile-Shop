@@ -64,6 +64,7 @@
 .item3 {
   grid-column: 1; /* left column */
   grid-row: 2;    /* bottom row */
+  text-align: center;
 }
 .wh{
      background-color: #cfcfcf;
@@ -101,7 +102,7 @@
     background-color: #ff7300;
 
   }
-      @media (max-width: 600px) {
+      @media (max-width: 650px) {
         .grid {
             grid-template-columns: 1fr;
         }
@@ -131,6 +132,12 @@
         .item3 {
             grid-column: 1; /* left column */
             grid-row: 2;    /* bottom row */
+        }
+
+    } /* card e*/
+      @media (max-width: 800px) {
+        .item3 {
+         padding: 8px;   
         }
 
     } /* card e*/
