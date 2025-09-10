@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OnePlus 13R 5G</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="Phone.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="Phone.css">
+  <script src="func.js" defer></script>
 </head>
 <body>
-      <header>
+  <header>
     <!-- Left = Logo -->
     <div class="logo-wrapper">
       <div class="notification-badge">
@@ -17,61 +18,80 @@
         <div class="notification-dot2"></div>
       </div>
     </div>
-
-    <!-- Side = Home -->
-    <div class="home">
-        <a href="Index.html" class="home-btn">𖠿</a>
-    </div>
-
     <!-- Center = Search -->
     <div class="search-container">
       <form action="/action_page.php">
         <input type="search" id="ue" name="ue" placeholder="🔍 Search...">
       </form>
     </div>
-
+    <!-- Home -->
+    <div>
+        <a href="Index.html" style="text-decoration:none; color:hsl(182, 100%, 94%);"><p style="font-size: 100%; text-align: center;">𖠿 <br>Home</p></a>
+    </div>
+    <!-- Cart -->
+    <div>
+        <a href="Cart.html" style="text-decoration:none; color:hsl(182, 100%, 94%);"><p style="font-size: 100%; text-align: center;">🛒<br>Cart</p></a>
+    </div>
+    <!-- Wishlist -->
+    <div>
+        <a href="Wishlist.html" style="text-decoration:none; color:hsl(182, 100%, 94%);"><p style="font-size: 100%; text-align: center;">♥️<br>Wishlist</p></a>
+    </div>
+    <!-- Order -->
+    <div>
+        <a href="Order.html" style="text-decoration:none; color:hsl(182, 100%, 94%);"><p style="font-size: 100%; text-align: center;">🛍️<br>Orders</p></a>
+    </div>
     <!-- Right = Profile -->
     <div class="profile">
       <a href="LoginPage.html"><img src="pfp.png" alt="PfP" class="profile-img"></a>
     </div>
   </header>
-<div class="menu">
-    <div>
-  <select id="br" name="br">
-    <option value="☰" disabled selected>☰</option>
-    <option value="Samsung">Samsung</option>
-    <option value="poco">poco</option>
-    <option value="Nokia">Nokia</option>
-    <option value="Xiaomi">Xiaomi</option>
-    <option value="OPPO">OPPO</option>
-    <option value="One Plus">One Plus</option>
-    <option value="Vivo">Vivo</option>
-    <option value="Motorola">Motorola</option>
-    <option value="Google">Google</option>
-    <option value="Realme">Realme</option>
-    <option value="LAVA">LAVA</option>
-    <option value="Micromax">Micromax</option>
-    <option value="Huawei">Huawei</option>
-    <option value="INFINIX">INFINIX</option>
-    <option value="Vivo IQOO Neo">Vivo IQOO Neo</option>
-    <option value="Karbonn Mobiles">Karbonn Mobiles</option>
-    <option value="Lenovo">Lenovo</option>
-    <option value="Lg">Lg</option>
-    <option value="Honor">Honor</option>
-    <option value="MI">MI</option>
-    <option value="Apple">Apple</option>
-    <option value="submit">Submit</option>
-  </select>
-  <br>
-
-</div><!--☰-->
+  
+  <!-- ---------- Toggle + Sliding Menu ---------- -->
+  <button
+    id="menuToggleBtn"
+    type="button"
+    class="menu-toggle"
+    onclick="toggleMenu(this)"
+    aria-expanded="false"
+    aria-controls="menu"
+    aria-label="Toggle menu"
+  >
+    <span class="menu-btn">☰</span>
     
-    <div><a href="Budget.html" class="a">Budget</a></div><!--Budget-->
-    <div><a href="Mid-Range.html" class="a">Mid Range</a></div><!--Mid-Range-->
-    <div><a href="Premium.html" class="a">Premium</a></div><!--Premium-->
-    <div><a href="Flagship.html" class="a">Flagship</a></div><!--Flagship-->
+  </button>
 
-</div>
+  <nav id="menu" class="menu" aria-label="Primary">
+    <select id="br" name="br" aria-label="Select Brand">
+      <option value="" disabled selected>Select Brand</option>
+      <option value="Samsung">Samsung</option>
+      <option value="Poco">Poco</option>
+      <option value="Nokia">Nokia</option>
+      <option value="Xiaomi">Xiaomi</option>
+      <option value="OPPO">OPPO</option>
+      <option value="One Plus">One Plus</option>
+      <option value="Vivo">Vivo</option>
+      <option value="Motorola">Motorola</option>
+      <option value="Google">Google</option>
+      <option value="Realme">Realme</option>
+      <option value="LAVA">LAVA</option>
+      <option value="Micromax">Micromax</option>
+      <option value="Huawei">Huawei</option>
+      <option value="INFINIX">INFINIX</option>
+      <option value="Vivo IQOO Neo">Vivo IQOO Neo</option>
+      <option value="Karbonn Mobiles">Karbonn Mobiles</option>
+      <option value="Lenovo">Lenovo</option>
+      <option value="LG">LG</option>
+      <option value="Honor">Honor</option>
+      <option value="MI">MI</option>
+      <option value="Apple">Apple</option>
+      <option value="submit">Submit</option>
+    </select>
+
+    <div><a href="Budget.html" class="a">Budget</a></div>
+    <div><a href="Mid-Range.html" class="a">Mid Range</a></div>
+    <div><a href="Premium.html" class="a">Premium</a></div>
+    <div><a href="Flagship.html" class="a">Flagship</a></div>
+  </nav>      
 
 <div>
     <div class="container">
@@ -133,47 +153,49 @@
                 </div>
         
             <div class="card item3">
-                <input class="wh" type="button" value="WISHLIST"id="wl" name="wl"><br>
-                <input class="atc" type="button" value="ADD TO CART"id="ac" name="ac"><br>
-                <input class="bu" type="button" value="BUY NOW"id="bn" name="bn"><br>
+                <input class="wh" type="button" value="‧₊˚♪ 𝄞₊˚⊹WISHLIST⋆.˚ ☾⭒.˚ "id="wl" name="wl"><br>
+                <input class="atc" type="button" value="˖･༄°･𖥔ADD TO CART°❀⋆ೃ."id="ac" name="ac"><br>
+                <input class="bu" type="button" value="˚.🎀༘⋆°❀⋆BUY NOW.ೃ࿔*:･˖ "id="bn" name="bn"><br>
 
             </div>
         </div>
     </div>
 </div>
 <footer>
-    <table>
-        <tr>
-            <th>Know about Us</th>
-            <th>Connect with Us</th>
-            <th>Join Us</th>
-            <th>Customer Service</th>
-        </tr>
-        <tr>
-            <td>About PingShop</td>
-            <td>Offline Shops</td> 
-            <td>Contact Ud</td> 
-            <td>Our Team</td>
-        </tr>
-        <tr>
-            <td>Facebook</td>
-            <td>X (twitter)</td>
-            <td>Instagram</td>
-            <td>Linkdin</td>
-        </tr>
-        <tr> 
-            <td>Sell on PingShop</td> 
-            <td>Sell under PingShop</td>
-            <td>Supply to Amazon</td>
-            <td>Become an Affiliate</td>
-        </tr>
-        <tr>
-            <td>Your Account</td>
-            <td>Returns Centre</td>
-            <td>Consultation</td>
-            <td>Help</td>
-        </tr>
-    </table>
+    <div class="fr">
+        <div>
+            <div>Know about Us</div>
+            <div>About PingShop</div>
+            <div>Offline Shops</div> 
+            <div>Contact Ud</div> 
+            <div>Our Team</div>
+        </div>
+
+        <div>
+            <div>Connect with Us</div>
+            <div>Facebook</div>
+            <div>X (twitter)</div>
+            <div>Instagram</div>
+            <div>Linkdin</div>
+        </div>
+        <div>
+            <div>Join Us</div>
+            <div>Sell on PingShop</div> 
+            <div>Sell under PingShop</div>
+            <div>Supply to Amazon</div>
+            <div>Become an Affiliate</div>
+        </div>
+        <div>
+            <div>Customer Service</div>
+            <div>Your Account</div>
+            <div>Returns Centre</div>
+            <div>Consultation</div>
+            <div>Help</div>
+        </div>
+    </div>
+    <div style="text-align: center;"><br><br>
+    © 2025 PingShop | All Rights Reserved 
+    <br> @sejalsingh8121@gmail.com</div>
 </footer>
 </body>
 </html>

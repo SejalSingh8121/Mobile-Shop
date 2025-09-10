@@ -72,21 +72,6 @@
       50% { opacity: 0.5; }
     } /* logo e*/
 
-.home-btn {
-  display: inline-block;
-  background-color: rgb(15, 15, 44);
-  color: white;
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-size: 1.2rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.home-btn:hover {
-  background: linear-gradient(rgb(0, 61, 147), #69a7ff);
-}
-
 /* Responsive: make it bigger on small screens */
     /* Center = Search s*/
     .search-container {
@@ -130,11 +115,58 @@
     width: 36px;
     height: 36px;
   }
+  .menu {
+    grid-template-columns: 1fr; /* stack vertically */
+  }
+  .menu div {
+    text-align: left;
+    border-left: none;
+    border-top: 1px solid rgb(15, 15, 44); /* horizontal dividers instead */
+            
+  }
+  .menu div:first-child {
+    border-top: none; /* avoid double border */
+  }
+  .fr{
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+  
+  }
+    .fr div{
+      width: 100%;
+      margin: 1%;
+      padding: 1%;
+    }
 }
+    @media (max-width: 400px) {
+        .menu{
+        flex-direction: row;
+        align-items: stretch;
+      }
+    }
+    /* Reduced motion respect */
+    @media (prefers-reduced-motion: reduce) {
+      .menu { transition: none; }
+      .notification-badge { animation: none; }
+    }
 
  /* header e*/
 
     /* menu bar s*/
+    .menu-toggle {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background: #fff;
+      cursor: pointer;
+      font-size: 18px;
+      margin: 12px 14px 0;
+      width: fit-content;
+    }
     .menu{
         background:linear-gradient(145deg,   rgb(54, 0, 81), #667eea);
         color: #f8f9fa;
@@ -143,44 +175,72 @@
         margin-bottom: 0px;
         border: 1px solid rgb(15, 15, 44);
           grid-template-columns: 150px repeat(auto-fit, minmax(120px, 1fr));
+  max-height: 0;             /* collapsed */
+  overflow: hidden;          /* hide contents while collapsed */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+
+  transition: max-height 0.5s ease; /* smooth animation */
+        max-height: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 8px 14px 0;
+      padding: 0 2px;
+      transition: max-height 0.5s ease, opacity 0.4s ease;
+      opacity: 0;
+      border-left: 3px solid #f0f0f0;
+      padding-left: 10px;
+}
+
+.menu.active {
+  max-height: 500px; /* enough to fit all menu items */
+  max-height: 500px; opacity: 1;
+}
+    .menu a, .menu select {
+      font-size: 16px;
+      padding: 6px 4px;
     }
+.menu-btn {
+      font-size: 22px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0;
+}
     .menu div{
         padding:10px;        
         border-left: 1px solid rgb(15, 15, 44);
         border-collapse: collapse;
         text-align: center;     
     }
-    /* for responsive menu */
-
-    @media (max-width: 600px) {
-        .menu {
-            grid-template-columns: 1fr; /* stack vertically */
-        }
-        .menu div {
-            text-align: left;
-            border-left: none;
-            border-top: 1px solid rgb(15, 15, 44); /* horizontal dividers instead */
-            
-        }
-        .menu div:first-child {
-            border-top: none; /* avoid double border */
-        }
-    }/* menu e*/
+    /* menu e*/
 
     /*footer s*/
     footer{
-        background: linear-gradient(145deg, hsl(261, 100%, 7%), rgb(0, 0, 44));
-        color: rgb(215, 215, 215);
-        padding: 10%;
+
+      justify-content: center;   /* centers horizontally */
+      align-items: center;       /* ✅ centers vertically */
+      background: linear-gradient(145deg, hsl(261, 100%, 7%), rgb(0, 0, 44));
+      color: rgb(215, 215, 215);
+      padding: 5%;
+
     }
-    table{
-        margin: 0 auto;
-        border-collapse: collapse;
-        width: 100%;
-    }
-    th, td{
+    .fr{
         padding: 1%;
         text-align: center;
+        display: flex;
+        gap: 40px;                /* space between columns */
+        justify-content: center;  /* horizontal centering */
+        align-items: flex-start;  /* align tops of each column */
+    }
+    .fr div{
+      margin: 1%;
+      padding: 1%;
     }/*footer e*/
     /* Menu Link s */
     .a {
